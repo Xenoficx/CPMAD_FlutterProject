@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project_app_2/screens/about_page.dart';
 import 'package:project_app_2/screens/cart_page.dart';
-import 'package:project_app_2/screens/home_page.dart';
+import 'package:project_app_2/screens/product_page.dart';
 import 'package:project_app_2/screens/profile_page.dart';
 
 
@@ -42,7 +42,7 @@ class MyDrawer extends StatelessWidget{
               leading: Icon(Icons.home),
               title: Text('Home'),
               onTap: () {
-                Get.to(()=> HomePage());
+                Get.to(()=> ProductPage());
               }
             ),
             ListTile(

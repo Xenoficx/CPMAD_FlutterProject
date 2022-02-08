@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:project_app_2/screens/home_page.dart';
+import 'package:project_app_2/screens/product_page.dart';
 import 'package:project_app_2/widget/map.dart';
 
 class AboutPage extends StatelessWidget {
@@ -17,7 +17,7 @@ class AboutPage extends StatelessWidget {
             color: Colors.black,
           ),
           onPressed: () {
-            Get.to(() => HomePage());
+            Get.to(() => ProductPage());
           },
         ),
       ),
@@ -26,7 +26,7 @@ class AboutPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Padding(
-            padding: const EdgeInsets.only(bottom:30.0, left: 115.0),
+            padding: const EdgeInsets.only(bottom: 30.0, left: 115.0),
             child: Text(
               'More About Us',
               style: TextStyle(fontSize: 26.0, fontWeight: FontWeight.bold),
@@ -45,43 +45,49 @@ class AboutPage extends StatelessWidget {
               ),
             ),
             onPressed: () {
-              showDialog(
-                context: context,
-                builder: (context) => AlertDialog(
-                  title: Text(
-                    'Contact Information',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 26.0
+              showGeneralDialog(
+                barrierColor: Colors.black.withOpacity(0.5),
+                transitionBuilder: (context, a1, a2, widget) {
+                  return Transform.scale(
+                    scale: a1.value,
+                    child: Opacity(
+                      opacity: a1.value,
+                      child: AlertDialog(
+                        shape: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(16.0),
+                        ),
+                        title: Text("Contact Us",
+                            style: TextStyle(
+                                fontSize: 26.0, fontWeight: FontWeight.bold)),
+                        content: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(
+                              'Manager: +65 3424 8793',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(height: 12.0),
+                            Text(
+                              'Office: +65 3134 2723',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(height: 12.0),
+                            Text(
+                              'Support: +65 9898 2950',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
-                  ),
-                  content: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        'Manager: +65 3424 8793',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold
-                        ),
-                      ),
-                      SizedBox(height: 12.0),
-                      Text(
-                        'Office: +65 3134 2723',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold
-                        ),
-                      ),
-                      SizedBox(height: 12.0),
-                      Text(
-                        'Support: +65 9898 2950',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold
-                        ),
-                      ),
-                    ],
-                  ),
-                )
+                  );
+                },
+                transitionDuration: Duration(milliseconds: 200),
+                barrierDismissible: true,
+                barrierLabel: '',
+                context: context,
+                pageBuilder: (context, animation1, animation2) {},
               );
             },
           ),
@@ -99,23 +105,32 @@ class AboutPage extends StatelessWidget {
               ),
             ),
             onPressed: () {
-              showDialog(
+              showGeneralDialog(
+                barrierColor: Colors.black.withOpacity(0.5),
+                transitionBuilder: (context, a1, a2, widget) {
+                  return Transform.scale(
+                    scale: a1.value,
+                    child: Opacity(
+                      opacity: a1.value,
+                      child: AlertDialog(
+                          shape: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(16.0),
+                          ),
+                          title: Text("About Us",
+                              style: TextStyle(
+                                  fontSize: 26.0, fontWeight: FontWeight.bold)),
+                          content: Text(
+                            "We are a company that provide food delivery for everyone and anyone!",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          )),
+                    ),
+                  );
+                },
+                transitionDuration: Duration(milliseconds: 200),
+                barrierDismissible: true,
+                barrierLabel: '',
                 context: context,
-                builder: (context) => AlertDialog(
-                  title: Text(
-                    'About Us',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 26.0,
-                    ),
-                  ),
-                  content: Text(
-                    'We are a company that provide food delivery for everyone and anyone!',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold
-                    ),
-                  )
-                ),
+                pageBuilder: (context, animation1, animation2) {},
               );
             },
           ),
@@ -133,36 +148,46 @@ class AboutPage extends StatelessWidget {
               ),
             ),
             onPressed: () {
-              showDialog(
-                context: context,
-                builder: (context) => AlertDialog(
-                  title: Text(
-                    'Our Social Media',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 26.0,
+              showGeneralDialog(
+                barrierColor: Colors.black.withOpacity(0.5),
+                transitionBuilder: (context, a1, a2, widget) {
+                  return Transform.scale(
+                    scale: a1.value,
+                    child: Opacity(
+                      opacity: a1.value,
+                      child: AlertDialog(
+                        shape: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(16.0),
+                        ),
+                        title: Text("Social Media",
+                            style: TextStyle(
+                                fontSize: 26.0, fontWeight: FontWeight.bold)),
+                        content: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(
+                              'Instagram: @food4grab',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            SizedBox(height: 12.0),
+                            Text(
+                              'Facebook: @grab4food',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
-                  ),
-                  content: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        'Instagram: @food4grab',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(height: 12.0),
-                      Text(
-                        'Facebook: @grab4food',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                  );
+                },
+                transitionDuration: Duration(milliseconds: 200),
+                barrierDismissible: true,
+                barrierLabel: '',
+                context: context,
+                pageBuilder: (context, animation1, animation2) {},
               );
             },
           ),
@@ -180,7 +205,7 @@ class AboutPage extends StatelessWidget {
               ),
             ),
             onPressed: () {
-              Get.to(()=> MapPage());
+              Get.to(() => MapPage());
             },
           ),
         ],

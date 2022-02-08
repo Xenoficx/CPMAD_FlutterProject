@@ -2,8 +2,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:project_app_2/screens/home_page.dart';
 import 'package:project_app_2/screens/login_page.dart';
+import 'package:project_app_2/screens/product_page.dart';
 
 
 Future<void> main () async {
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       title: 'Food4Grab',
       routes: {
         '/login': (context)=> LoginPage(),
-        '/home': (context)=> HomePage(),
+        '/home': (context)=> ProductPage(),
       },
       home:LoginPage(),
     );

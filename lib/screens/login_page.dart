@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:project_app_2/constants/colors.dart';
-
+import 'package:project_app_2/screens/product_page.dart';
 import 'package:project_app_2/services/firebaseauth_service.dart';
-import 'package:project_app_2/screens/home_page.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -72,7 +70,7 @@ class _LoginPageState extends State<LoginPage>{
                 );
                 if (newuser != null){
                   Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(builder: (context)=> HomePage()));
+                    MaterialPageRoute(builder: (context)=> ProductPage()));
                 }
               } else {
                 var reguser = await FirebaseAuthService().signIn(
@@ -80,7 +78,7 @@ class _LoginPageState extends State<LoginPage>{
                   password: passwordController.text.trim(),
                 );
                 if (reguser != null){
-                  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>HomePage()));
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>ProductPage()));
                 }
               }
             },
